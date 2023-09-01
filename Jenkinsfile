@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('sadf') {
+      steps {
+        readTrusted 'https://github.com/vaibhav31s/Jenkins_Jobs/blob/master/src/Cron%20Jobs/CronScript/Jenkinsfile'
+      }
+    }
+
   }
 }
