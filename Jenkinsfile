@@ -2,8 +2,20 @@ pipeline {
   agent any
   stages {
     stage('asdf') {
-      steps {
-        load 'master/src/Cron%20Jobs/CronScript.groovy'
+      parallel {
+        stage('asdf') {
+          steps {
+            load 'master/src/Cron%20Jobs/CronScript.groovy'
+          }
+        }
+
+        stage('Hello') {
+          steps {
+            sh '''echo "Hello"
+'''
+          }
+        }
+
       }
     }
 
